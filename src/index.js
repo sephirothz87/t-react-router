@@ -24,7 +24,15 @@ const PlayerAPI = {
         const isPlayer = p => p.number === id
         return this.players.find(isPlayer)
     }
+    // all:()=>{this.players},
+    // get:(id)=>{
+    //     const isPlayer = p=>p.number===id
+    //     return this.players.find(isPlayer)
+    // }
+    //改成箭头函数，this的作用域发生了变化，players变成了undefined
 }
+//player接口对象，直接MOCK了数据
+//这种提供接口的方式以后可以参考
 
 // The FullRoster iterates over all of the players and creates
 // a link to their profile page.
@@ -41,6 +49,9 @@ const FullRoster = () => (
         </ul>
     </div>
 )
+//一个展现全部player并产生链接的组件
+//这里用到了react里面默认遍历数据对象的功能？
+
 
 // The Player looks up the player using the number parsed from
 // the URL's pathname. If no player is found with the given
@@ -60,6 +71,9 @@ const Player = (props) => {
         </div>
     )
 }
+// 展示单个Player的组件
+
+
 
 // The Roster component matches one of two different routes
 // depending on the full pathname
@@ -69,6 +83,7 @@ const Roster = () => (
         <Route path='/roster/:number' component={Player}/>
     </Switch>
 )
+//算是一个容器组件，根据实际情况显示全员控件或单体控件
 
 const Schedule = () => (
     <div>
