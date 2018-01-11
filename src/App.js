@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// import {Router,Route,Switch} from 'react-router';
-import {BrowserRouter, Route,Router,HashRouter,Link,Switch} from 'react-router-dom';
-// import {Link} from 'react-router-dom';
+import {Route,Link,Switch} from 'react-router-dom';
 
 import Hello from './Hello';
 import Compo1 from './Compo1';
+
+//有时候会卡住，node那边也没有提示
+//这种时候先把用到router的地方都删掉，然后循序渐进的添加可解
 
 class App extends Component {
   render() {
